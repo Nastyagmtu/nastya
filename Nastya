@@ -25,6 +25,7 @@ void bubbleSort(int *a, int s)
                 }
                     }
 void fill_random(int*a)
+srand(time(NULL));
 {
     for(int i=0;i<ARRAY_SIZE;i++)
     {
