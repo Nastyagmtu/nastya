@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define ARRAY_SIZE 20
+void print_array(int*p)
+{
+    for(int i=0;i<ARRAY_SIZE;i++)
+    {
+        printf("%d \n",p[i]);
+    }
+}
+void bubbleSort(int *a, int s)
+{
+    int i, j, temp;
+
+    for(i=s-1; i>=0; i--)
+        for(j=0; j<i; j++)
+            if(a[j] > a[j+1])
+                {
+     temp = a[j]; a[j] = a[j+1]; a[j+1] = temp;
+                }
+}
+void fill_random(int*a)
+{
+    for(int i=0;i<ARRAY_SIZE;i++)
+    {
+        a[i]=rand();
+    }
+}
+int main()
+{
+    int*array=(int*)malloc(ARRAY_SIZE*sizeof(int));
+    fill_random(array);
+    bubbleSort(array,ARRAY_SIZE);
+    print_array(array);
+    system("pause");
+  return 0;
+}
